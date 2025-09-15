@@ -10,20 +10,22 @@
       font-family: "Segoe UI", sans-serif;
       background: #111;
       color: #fff;
-      overflow-x: hidden;
     }
+
     h1 {
       text-align: center;
       color: red;
       margin-top: 20px;
       font-size: 28px;
     }
+
     h2 {
       text-align: center;
       color: red;
       margin: 5px 0 15px;
       font-size: 22px;
     }
+
     p {
       line-height: 1.6;
       font-size: 16px;
@@ -40,6 +42,7 @@
       top: 0;
       z-index: 1000;
     }
+
     nav a {
       flex: 0 0 auto;
       color: #fff;
@@ -52,6 +55,7 @@
       border-radius: 4px;
       transition: 0.3s;
     }
+
     nav a.active {
       background: red;
       color: #fff;
@@ -61,13 +65,11 @@
       padding: 22px 18px;
       border-bottom: 2px solid red;
     }
+
     section h3 {
       color: gold;
       margin-bottom: 10px;
       font-size: 19px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .btn {
@@ -81,221 +83,138 @@
       font-size: 15px;
       font-weight: bold;
       transition: 0.3s;
-      cursor: pointer;
     }
+
     .btn:hover {
       background: darkred;
-    }
-
-    /* INTRO SCREEN */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      z-index: 2000;
-      color: white;
-      font-size: 24px;
-      animation: fadeOut 1s ease forwards;
-      animation-delay: 3s;
-    }
-    #intro h1 {
-      color: red;
-      animation: fadeIn 2s ease;
-    }
-    @keyframes fadeIn {
-      from {opacity: 0; transform: scale(0.9);}
-      to {opacity: 1; transform: scale(1);}
-    }
-    @keyframes fadeOut {
-      to {opacity: 0; visibility: hidden;}
-    }
-
-    /* RELOAD ANIMATION */
-    #reload-anim {
-      position: fixed;
-      top:0; left:0;
-      width:100%; height:100%;
-      background:#111;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      color:white;
-      font-size:24px;
-      z-index:3000;
-      opacity:0;
-      visibility:hidden;
-      transition:opacity 0.5s;
-    }
-    #reload-anim.show {
-      opacity:1;
-      visibility:visible;
     }
   </style>
 </head>
 <body>
-  <!-- INTRO SCREEN -->
-  <div id="intro">
-    <h1 id="welcome-text">Selamat Datang</h1>
-  </div>
-
-  <!-- RELOAD ANIMATION -->
-  <div id="reload-anim">🔄 Memuat ulang...</div>
-
-  <!-- LANGUAGE SWITCH -->
-  <div style="text-align:center; margin-top:10px;">
-    <button class="btn" onclick="switchLang('id')">🇮🇩 Indonesia</button>
-    <button class="btn" onclick="switchLang('en')">🇺🇸 English</button>
-  </div>
 
   <h1>ARMUFA SMP</h1>
   <h2>SEASON 1</h2>
-  <p style="text-align:center;font-size:15px;" id="subtitle">Economy & RPG Minecraft Server</p>
+  <p style="text-align:center;font-size:15px;">Economy & RPG Minecraft Server</p>
 
   <!-- MENU -->
   <nav>
-    <a href="#update" id="nav-update">🆕 Update</a>
-    <a href="#deskripsi" id="nav-deskripsi">📜 Deskripsi</a>
-    <a href="#aturan" id="nav-aturan">📖 Aturan</a>
-    <a href="#fitur" id="nav-fitur">⚡ Fitur</a>
-    <a href="#ipport" id="nav-ipport">🌍 IP & Port</a>
-    <a href="#owner" id="nav-owner">👑 Owner/Admin</a>
-    <a href="#grup" id="nav-grup">💬 Grup</a>
-    <a href="#topup" id="nav-topup">💰 Top Up</a>
+    <a href="#deskripsi">📜 Deskripsi</a>
+    <a href="#aturan">📖 Aturan</a>
+    <a href="#fitur">⚡ Fitur</a>
+    <a href="#ipport">🌍 IP & Port</a>
+    <a href="#owner">👑 Owner/Admin</a>
+    <a href="#grup">💬 Grup</a>
+    <a href="#topup">💰 Top Up</a>
   </nav>
 
-  <!-- SECTIONS -->
-  <section id="update">
-    <h3>🆕 <span id="update-title">Update Terbaru</span></h3>
-    <p id="update-content"></p>
-  </section>
-
+  <!-- SECTION DESKRIPSI -->
   <section id="deskripsi">
-    <h3>📜 <span id="desc-title">Deskripsi</span></h3>
-    <p id="desc-content"></p>
+    <h3>📜 Deskripsi</h3>
+    <p>
+      Assalamualaikum warahmatullahi wabarakatuh,<br><br>
+      Kalian bosan main server murni yang itu-itu aja?  
+      Yuk gabung ke <b>ARMUFA SMP INDONESIA [SEASON 1]</b> 🎉<br><br>
+      🌍 Server ini hadir dengan konsep <b>Economy & RPG</b>.  
+      Kalian bisa mining, bikin rumah, farming, dungeon, parkour, PvP, hingga ikut event gacha untuk mendapatkan <b>senjata legendaris</b>.  
+      Semua aktivitas dijamin bikin seru & nagih 🔥.
+    </p>
   </section>
 
+  <!-- SECTION ATURAN -->
   <section id="aturan">
-    <h3>📖 <span id="rules-title">Aturan Server</span></h3>
-    <p id="rules-content"></p>
+    <h3>📖 Aturan Server</h3>
+    <p>
+      ⚙️ <b>ATURAN WAJIB</b><br><br>
+      1. 🚫 Dilarang menggunakan cheat termasuk x-ray.<br>
+      2. 🚫 Tidak boleh toxic atau menghina player lain.<br>
+      3. 🚫 Tidak boleh menjual item langka, rumah, atau uang game ke semua orang.<br>
+      4. ✅ Hormati semua player & admin.<br>
+      5. ✅ Jika ada bug/kesalahan player, langsung PM ke Owner/Admin.<br><br>
+      Pelanggaran bisa kena <b>ban sementara/permanen</b>.
+    </p>
   </section>
 
+  <!-- SECTION FITUR -->
   <section id="fitur">
-    <h3>⚡ <span id="features-title">Fitur Unggulan</span></h3>
-    <p id="features-content"></p>
+    <h3>⚡ Fitur Unggulan</h3>
+    <p>
+      - Lobby interaktif<br>
+      - Sistem economy & jual-beli<br>
+      - Gacha senjata legendaris<br>
+      - Claim land (lindungi rumahmu)<br>
+      - PvP arena seru<br>
+      - Parkour challenge<br>
+      - Dungeon & quest unik<br>
+    </p>
   </section>
 
+  <!-- SECTION IP -->
   <section id="ipport">
-    <h3>🌍 <span id="ip-title">IP & Port</span></h3>
-    <p id="ip-content"></p>
+    <h3>🌍 IP & Port</h3>
+    <p>
+      <b>IP:</b> play.armufasmp.my.id<br>
+      <b>Port:</b> 19132<br><br>
+      📌 <i>Khusus server:</i><br>
+      - Bedrock (Android/iOS/PC)<br>
+      - Java (PC / PojavLauncher)
+    </p>
     <a class="btn" onclick="copyText('play.armufasmp.my.id')">📋 Salin IP</a>
-    <a class="btn" onclick="copyText('19132')">📋 Salin Port</a><br><br>
-    <a class="btn" href="minecraft://?addExternalServer=ARMUFA SMP|play.armufasmp.my.id:19132">🚀 Main Bedrock</a>
-    <a class="btn" href="minecraft://?addServer=ARMUFA SMP|play.armufasmp.my.id:25565">💻 Main Java</a>
+    <a class="btn" onclick="copyText('19132')">📋 Salin Port</a>
   </section>
 
+  <!-- SECTION OWNER -->
   <section id="owner">
-    <h3>👑 <span id="owner-title">Owner & Admin</span></h3>
-    <p id="owner-content"></p>
+    <h3>👑 Owner & Admin</h3>
+    <p>
+      <b>OWNER:</b><br>
+      🌟 [OWNER] Arya (ARMUFA)<br><br>
+
+      <b>KETUA ADMIN:</b><br>
+      - Gery (Sirr Arthur)<br><br>
+
+      <b>ADMIN LAINNYA:</b><br>
+      - Ezza (Riski)<br>
+      - Nagata (Zecroomcraft)<br>
+      - Fajri (jrfaii)<br>
+      - Keiya (KeiyaSanch)<br>
+    </p>
   </section>
 
+  <!-- SECTION GRUP -->
   <section id="grup">
-    <h3>💬 <span id="group-title">Grup Server</span></h3>
-    <p id="group-content"></p>
+    <h3>💬 Grup Server</h3>
+    <p>
+      Gabung ke grup WhatsApp server untuk info & event terbaru:<br>
+      <a class="btn" href="https://linkbio.co/armufasmp" target="_blank">➡️ Join Grup</a>
+    </p>
   </section>
 
+  <!-- SECTION TOP UP -->
   <section id="topup">
-    <h3>💰 <span id="topup-title">Top Up</span></h3>
-    <p id="topup-content"></p>
+    <h3>💰 Top Up</h3>
+    <p>
+      🪙 <b>HARGA COIN</b><br>
+      - 1000 = 5K<br>
+      - 2000 = 10K<br>
+      - 4000 = 20K<br>
+      - 8000 = 40K<br>
+      - 10000 = 50K<br>
+      - 20000 = 100K<br><br>
+
+      <b>RANK UP</b><br>
+      - VIP = 5K / bulan<br>
+      - MVP = 20K / bulan<br>
+      - Rich = 50K / bulan<br>
+      - Super Rich = 100K / bulan<br>
+      - Supreme = 150K / bulan<br><br>
+
+      Untuk Top Up hubungi <b>[OWNER] ARMUFA SMP</b> via WhatsApp:<br>
+      <a class="btn" href="https://wa.me/6283837297362" target="_blank">💰 Top Up Sekarang</a>
+    </p>
   </section>
 
+  <!-- SCRIPT -->
   <script>
-    const texts = {
-      id: {
-        welcome: "Selamat Datang",
-        subtitle: "Server Minecraft Economy & RPG",
-        updateTitle: "Update Terbaru",
-        updateContent: "<b>Update 1.0 SEASON 1</b><br><br>🗡️ Mode RPG<br>🏰 Dungeon (Khusus Java)<br>🎲 RTP (Random Teleport)<br>🎖️ Sistem Rank",
-        descTitle: "Deskripsi",
-        descContent: "Assalamualaikum warahmatullahi wabarakatuh,<br><br>Kalian bosan main server murni yang itu-itu aja? Yuk gabung ke <b>ARMUFA SMP INDONESIA [SEASON 1]</b> 🎉<br><br>🌍 Server ini hadir dengan konsep <b>Economy & RPG</b>. Kalian bisa mining, bikin rumah, farming, dungeon, parkour, PvP, hingga ikut event gacha untuk mendapatkan <b>senjata legendaris</b>. Semua aktivitas dijamin seru & nagih 🔥.",
-        rulesTitle: "Aturan Server",
-        rulesContent: "⚙️ <b>ATURAN WAJIB</b><br><br>1. 🚫 Dilarang cheat termasuk x-ray.<br>2. 🚫 Tidak boleh toxic atau menghina player lain.<br>3. 🚫 Tidak boleh jual item langka ke semua orang.<br>4. ✅ Hormati semua player & admin.<br>5. ✅ Jika ada bug, langsung PM ke Owner/Admin.<br><br>Pelanggaran bisa kena ban sementara/permanen.",
-        featuresTitle: "Fitur Unggulan",
-        featuresContent: "🏠 Lobby interaktif<br>💰 Sistem economy & jual-beli<br>🪙 Gacha senjata legendaris<br>🔒 Claim land (lindungi rumahmu)<br>⚔️ PvP arena seru<br🪜 Parkour challenge<br>🗺️ Dungeon & quest unik",
-        ipTitle: "IP & Port",
-        ipContent: "<b>IP:</b> play.armufasmp.my.id<br><b>Port:</b> 19132<br><br>📌 <i>Khusus server:</i><br>- Bedrock<br>- Java (PC & Launcher Android)",
-        ownerTitle: "Owner & Admin",
-        ownerContent: "<b>OWNER:</b><br>👑 Arya (ARMUFA)<br><br><b>KETUA ADMIN:</b><br>👮 Gery (Sirr Arthur)<br><br><b>ADMIN LAINNYA:</b><br>💂 Azril (RillTo2012)<br>💂 Ezza (Riski)<br>💂 Nagata (Zecroomcraft)<br>💂 Fajri (jrfaii)<br>💂 Keiya (KeiyaSanch)<br>💂 Azel (FoxxN)",
-        groupTitle: "Grup Server",
-        groupContent: "Gabung ke grup WhatsApp server untuk info & event terbaru:<br><a class='btn' href='https://linkbio.co/armufasmp' target='_blank'>➡️ Join Grup</a>",
-        topupTitle: "Top Up",
-        topupContent: "🪙 <b>Harga Coin</b><br>- 1000 = 5K<br>- 2000 = 10K<br>- 4000 = 20K<br>- 8000 = 40K<br>- 10000 = 50K<br>- 20000 = 100K<br><br><b>RANK UP</b><br>- VIP = 5K / bulan<br>- MVP = 20K / bulan<br>- Rich = 50K / bulan<br>- Super Rich = 100K / bulan<br>- Supreme = 150K / bulan<br><br>Hubungi <b>[OWNER]</b> via WhatsApp:<br><a class='btn' href='https://wa.me/6283837297362' target='_blank'>💰 Top Up Sekarang</a>"
-      },
-      en: {
-        welcome: "Welcome",
-        subtitle: "Minecraft Economy & RPG Server",
-        updateTitle: "Latest Update",
-        updateContent: "<b>Update 1.0 SEASON 1</b><br><br>🗡️ RPG Mode<br>🏰 Dungeons (Java only)<br>🎲 RTP (Random Teleport)<br>🎖️ Rank System",
-        descTitle: "Description",
-        descContent: "Hello everyone!<br><br>Bored of the same old vanilla server? Join <b>ARMUFA SMP INDONESIA [SEASON 1]</b> 🎉<br><br>🌍 This server comes with an <b>Economy & RPG</b> concept. You can mine, build houses, farm, explore dungeons, do parkour, PvP, and join gacha events to get <b>legendary weapons</b>. Everything is fun & addictive 🔥.",
-        rulesTitle: "Server Rules",
-        rulesContent: "⚙️ <b>MANDATORY RULES</b><br><br>1. 🚫 No cheating including x-ray.<br>2. 🚫 No toxicity or insulting others.<br>3. 🚫 Do not sell rare items/houses/money to others.<br>4. ✅ Respect all players & admins.<br>5. ✅ Report bugs directly to Owner/Admin.<br><br>Violations may result in temporary/permanent ban.",
-        featuresTitle: "Main Features",
-        featuresContent: "🏠 Interactive lobby<br>💰 Economy & trading system<br>🪙 Legendary weapon gacha<br>🔒 Land claim (protect your house)<br>⚔️ Exciting PvP arena<br>🪜 Parkour challenge<br>🗺️ Unique dungeons & quests",
-        ipTitle: "IP & Port",
-        ipContent: "<b>IP:</b> play.armufasmp.my.id<br><b>Port:</b> 19132<br><br>📌 <i>Available for:</i><br>- Bedrock<br>- Java (PC & Android Launcher)",
-        ownerTitle: "Owner & Admin",
-        ownerContent: "<b>OWNER:</b><br>👑 Arya (ARMUFA)<br><br><b>HEAD ADMIN:</b><br>👮 Gery (Sirr Arthur)<br><br><b>OTHER ADMINS:</b><br>💂 Azril (RillTo2012)<br>💂 Ezza (Riski)<br>💂 Nagata (Zecroomcraft)<br>💂 Fajri (jrfaii)<br>💂 Keiya (KeiyaSanch)<br>💂 Azel (FoxxN)",
-        groupTitle: "Server Group",
-        groupContent: "Join the server's WhatsApp group for latest info & events:<br><a class='btn' href='https://linkbio.co/armufasmp' target='_blank'>➡️ Join Group</a>",
-        topupTitle: "Top Up",
-        topupContent: "🪙 <b>COIN PRICES</b><br>- 1000 = 5K<br>- 2000 = 10K<br>- 4000 = 20K<br>- 8000 = 40K<br>- 10000 = 50K<br>- 20000 = 100K<br><br><b>RANK UP</b><br>- VIP = 5K / month<br>- MVP = 20K / month<br>- Rich = 50K / month<br>- Super Rich = 100K / month<br>- Supreme = 150K / month<br><br>Contact <b>[OWNER]</b> via WhatsApp:<br><a class='btn' href='https://wa.me/6283837297362' target='_blank'>💰 Top Up Now</a>"
-      }
-    };
-
-    function applyLang() {
-      const lang = localStorage.getItem("lang") || "id";
-      document.getElementById("welcome-text").textContent = texts[lang].welcome;
-      document.getElementById("subtitle").textContent = texts[lang].subtitle;
-      document.getElementById("update-title").textContent = texts[lang].updateTitle;
-      document.getElementById("update-content").innerHTML = texts[lang].updateContent;
-      document.getElementById("desc-title").textContent = texts[lang].descTitle;
-      document.getElementById("desc-content").innerHTML = texts[lang].descContent;
-      document.getElementById("rules-title").textContent = texts[lang].rulesTitle;
-      document.getElementById("rules-content").innerHTML = texts[lang].rulesContent;
-      document.getElementById("features-title").textContent = texts[lang].featuresTitle;
-      document.getElementById("features-content").innerHTML = texts[lang].featuresContent;
-      document.getElementById("ip-title").textContent = texts[lang].ipTitle;
-      document.getElementById("ip-content").innerHTML = texts[lang].ipContent;
-      document.getElementById("owner-title").textContent = texts[lang].ownerTitle;
-      document.getElementById("owner-content").innerHTML = texts[lang].ownerContent;
-      document.getElementById("group-title").textContent = texts[lang].groupTitle;
-      document.getElementById("group-content").innerHTML = texts[lang].groupContent;
-      document.getElementById("topup-title").textContent = texts[lang].topupTitle;
-      document.getElementById("topup-content").innerHTML = texts[lang].topupContent;
-    }
-
-    function switchLang(lang) {
-      localStorage.setItem("lang", lang);
-      const reloadAnim = document.getElementById("reload-anim");
-      reloadAnim.classList.add("show");
-      setTimeout(() => {
-        location.reload();
-      }, 1000);
-    }
-
-    window.onload = applyLang;
-
-    // Copy
-    function copyText(text) {
-      navigator.clipboard.writeText(text);
-      alert("Disalin: " + text);
-    }
-
     // Smooth scroll
     document.querySelectorAll('nav a').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -305,6 +224,34 @@
         });
       });
     });
+
+    // Scroll spy
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 80;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    });
+
+    // Copy function
+    function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Disalin: " + text);
+    }
   </script>
 </body>
 </html>
