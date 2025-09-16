@@ -5,283 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ARMUFA SMP Season 1</title>
   <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #111;
-      color: #fff;
-    }
-
-    h1 {
-      text-align: center;
-      color: red;
-      margin-top: 15px;
-      font-size: 26px;
-    }
-
-    h2 {
-      text-align: center;
-      color: red;
-      margin: 0;
-      font-size: 20px;
-    }
-
-    p {
-      line-height: 1.5;
-      font-size: 15px;
-    }
-
-    /* MENU */
-    nav {
-      background: #000;
-      border-bottom: 2px solid red;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      padding: 5px 0;
-    }
-    .menu-row {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 4px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      padding: 6px 10px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      border-radius: 4px;
-      transition: 0.3s;
-    }
-    nav a.active {
-      background: red;
-      color: #fff;
-    }
-
-    section {
-      padding: 20px;
-      border-bottom: 2px solid red;
-    }
-
-    section h3 {
-      color: gold;
-      margin-bottom: 8px;
-      font-size: 18px;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    ul li {
-      margin-bottom: 6px;
-      font-size: 15px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 12px;
-      background: red;
-      color: #fff;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: darkred;
-    }
-
-    /* Language button */
-    #langBtn {
-      position: fixed;
-      bottom: 15px;
-      right: 15px;
-      background: red;
-      border: none;
-      color: #fff;
-      padding: 10px;
-      border-radius: 50%;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 2000;
-    }
-
+    body { margin: 0; font-family: "Segoe UI", sans-serif; background: #111; color: #fff; }
+    h1, h2 { text-align: center; color: red; margin: 10px 0; }
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; }
+    p { line-height: 1.5; font-size: 15px; }
+    nav { background: #000; border-bottom: 2px solid red; position: sticky; top: 0; z-index: 1000; padding: 5px 0; }
+    .menu-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+    nav a { color: #fff; text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 4px; transition: 0.3s; }
+    nav a.active { background: red; }
+    section { padding: 20px; border-bottom: 2px solid red; }
+    section h3 { color: gold; margin-bottom: 8px; font-size: 18px; }
+    ul { margin: 0; padding-left: 20px; }
+    ul li { margin-bottom: 6px; font-size: 15px; }
+    .btn { display: inline-block; margin-top: 10px; padding: 10px 12px; background: red; color: #fff; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: darkred; }
+    #langBtn { position: fixed; bottom: 15px; right: 15px; background: red; border: none; color: #fff; padding: 10px; border-radius: 50%; font-weight: bold; cursor: pointer; z-index: 2000; }
     /* INTRO */
-    #intro {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      font-weight: bold;
-      color: red;
-      font-size: 26px;
-      text-align: center;
-      text-shadow: 0 0 10px red, 0 0 20px crimson;
-      animation: fadeOut 1s ease forwards;
-      animation-delay: 3s;
-    }
-    .intro-line {
-      opacity: 0;
-      transform: scale(0.8);
-      animation: popIn 0.8s ease forwards;
-    }
-    .intro-line:nth-child(1) { animation-delay: 0.2s; }
-    .intro-line:nth-child(2) { animation-delay: 1s; }
-
-    @keyframes popIn {
-      to { opacity: 1; transform: scale(1); }
-    }
-    @keyframes fadeOut {
-      to { opacity: 0; visibility: hidden; }
-    }
+    #intro { position: fixed; top:0; left:0; width:100%; height:100%; background:#000; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:9999; font-weight:bold; color:red; font-size:26px; text-align:center; text-shadow:0 0 10px red,0 0 20px crimson; animation:fadeOut 1s ease forwards; animation-delay:3s; }
+    .intro-line { opacity:0; transform:scale(0.8); animation:popIn 0.8s ease forwards; }
+    .intro-line:nth-child(1){animation-delay:0.2s;}
+    .intro-line:nth-child(2){animation-delay:1s;}
+    @keyframes popIn { to { opacity:1; transform:scale(1);} }
+    @keyframes fadeOut { to { opacity:0; visibility:hidden;} }
   </style>
 </head>
 <body>
 
   <!-- INTRO -->
   <div id="intro">
-    <div class="intro-line">SELAMAT DATANG</div>
-    <div class="intro-line">DI SERVER ARMUFA SMP</div>
+    <div class="intro-line lang id">SELAMAT DATANG</div>
+    <div class="intro-line lang en" style="display:none;">WELCOME</div>
+    <div class="intro-line lang id">DI SERVER ARMUFA SMP</div>
+    <div class="intro-line lang en" style="display:none;">TO ARMUFA SMP SERVER</div>
   </div>
 
-  <h1>ARMUFA SMP</h1>
-  <h2>SEASON 1</h2>
-  <p style="text-align:center;font-size:14px;">Economy & RPG Minecraft Server</p>
+  <!-- Judul -->
+  <h1 class="lang id">ARMUFA SMP</h1>
+  <h1 class="lang en" style="display:none;">ARMUFA SMP</h1>
+  <h2 class="lang id">SEASON 1</h2>
+  <h2 class="lang en" style="display:none;">SEASON 1</h2>
+  <p class="lang id" style="text-align:center;font-size:14px;">Server Minecraft dengan konsep Economy & RPG</p>
+  <p class="lang en" style="text-align:center;font-size:14px;display:none;">Minecraft Server with Economy & RPG concept</p>
 
   <!-- MENU -->
   <nav>
     <div class="menu-row">
-      <a href="#deskripsi">📜 Deskripsi</a>
-      <a href="#aturan">📖 Aturan</a>
-      <a href="#fitur">⚡ Fitur</a>
+      <a href="#deskripsi" class="lang id">📜 Deskripsi</a>
+      <a href="#deskripsi" class="lang en" style="display:none;">📜 Description</a>
+      <a href="#aturan" class="lang id">📖 Aturan</a>
+      <a href="#aturan" class="lang en" style="display:none;">📖 Rules</a>
+      <a href="#fitur" class="lang id">⚡ Fitur</a>
+      <a href="#fitur" class="lang en" style="display:none;">⚡ Features</a>
     </div>
     <div class="menu-row">
-      <a href="#ipport">🌍 IP & Port</a>
-      <a href="#owner">👑 Owner/Admin</a>
-      <a href="#grup">💬 Grup</a>
-      <a href="#topup">💰 Top Up</a>
+      <a href="#ipport" class="lang id">🌍 IP & Port</a>
+      <a href="#ipport" class="lang en" style="display:none;">🌍 IP & Port</a>
+      <a href="#owner" class="lang id">👑 Owner/Admin</a>
+      <a href="#owner" class="lang en" style="display:none;">👑 Owner/Admin</a>
+      <a href="#grup" class="lang id">💬 Grup</a>
+      <a href="#grup" class="lang en" style="display:none;">💬 Group</a>
+      <a href="#topup" class="lang id">💰 Top Up</a>
+      <a href="#topup" class="lang en" style="display:none;">💰 Top Up</a>
     </div>
   </nav>
 
-  <!-- SECTION DESKRIPSI -->
+  <!-- DESKRIPSI -->
   <section id="deskripsi">
-    <h3>📜 Deskripsi</h3>
-    <p class="lang id">
-      🙌 Assalamualaikum warahmatullahi wabarakatuh,<br><br>
-      🎮 Bosan main server yang gitu-gitu aja?  
-      Gabung ke <b>ARMUFA SMP INDONESIA [SEASON 1]</b> 🎉<br><br>
-      🌍 Server ini hadir dengan konsep <b>Economy & RPG</b>:  
-      mining ⛏️, bikin rumah 🏠, farming 🌾, dungeon 🏰, parkour 🪜, PvP ⚔️, sampai event gacha 🎲 dengan hadiah <b>senjata legendaris</b>.  
-      Dijamin seru & nagih 🔥
-    </p>
-    <p class="lang en" style="display:none;">
-      🙌 Assalamualaikum warahmatullahi wabarakatuh,<br><br>
-      🎮 Tired of boring servers?  
-      Join <b>ARMUFA SMP INDONESIA [SEASON 1]</b> 🎉<br><br>
-      🌍 With <b>Economy & RPG</b> features:  
-      mining ⛏️, building 🏠, farming 🌾, dungeons 🏰, parkour 🪜, PvP ⚔️, and gacha 🎲 for <b>legendary weapons</b>.  
-      Guaranteed fun & addictive 🔥
-    </p>
+    <h3 class="lang id">📜 Deskripsi</h3>
+    <h3 class="lang en" style="display:none;">📜 Description</h3>
+    <p class="lang id">Selamat datang di <b>ARMUFA SMP INDONESIA [SEASON 1]</b>. Server ini dirancang untuk kamu yang suka tantangan dengan gaya <b>Economy & RPG</b>: mining, farming, membangun rumah, dungeon, parkour, PvP, hingga event gacha dengan hadiah senjata legendaris.</p>
+    <p class="lang en" style="display:none;">Welcome to <b>ARMUFA SMP INDONESIA [SEASON 1]</b>. This server is made for players who love challenges with <b>Economy & RPG</b> style: mining, farming, building houses, dungeons, parkour, PvP, and gacha events with legendary weapon prizes.</p>
   </section>
 
-  <!-- SECTION ATURAN -->
+  <!-- ATURAN -->
   <section id="aturan">
-    <h3>📖 Aturan Server</h3>
+    <h3 class="lang id">📖 Aturan Server</h3>
+    <h3 class="lang en" style="display:none;">📖 Server Rules</h3>
     <ul class="lang id">
-      <li>🚫 Tidak boleh cheat (x-ray, hack client, dll)</li>
-      <li>🚫 Tidak boleh toxic atau menghina player lain</li>
+      <li>🚫 Tidak boleh cheat</li>
+      <li>🚫 Tidak boleh toxic</li>
       <li>🚫 Jangan spam chat</li>
-      <li>🚫 Jangan griefing atau merusak bangunan orang</li>
+      <li>🚫 Jangan griefing</li>
       <li>🚫 Jangan iklan server lain</li>
-      <li>🚫 Jangan AFK terlalu lama di spawn</li>
+      <li>🚫 Jangan AFK lama di spawn</li>
+      <li>🚫 Tidak boleh menggunakan bug</li>
+      <li>🚫 Jangan menghina agama/suku</li>
+      <li>🚫 Jangan curang di event</li>
+      <li>🚫 Jangan mencuri item player lain</li>
       <li>✅ Hormati semua player & admin</li>
-      <li>✅ Gunakan bahasa yang sopan</li>
-      <li>✅ Ikuti event dengan sportif</li>
-      <li>✅ Lapor bug ke admin/owner segera</li>
+      <li>✅ Gunakan bahasa sopan</li>
+      <li>✅ Lapor bug segera</li>
+      <li>✅ Ikuti aturan tambahan event</li>
+      <li>✅ Jaga suasana server tetap positif</li>
     </ul>
     <ul class="lang en" style="display:none;">
-      <li>🚫 No cheating (x-ray, hack client, etc.)</li>
-      <li>🚫 No toxic behavior or insulting players</li>
-      <li>🚫 No spamming chat</li>
-      <li>🚫 No griefing or destroying others' builds</li>
+      <li>🚫 No cheating</li>
+      <li>🚫 No toxicity</li>
+      <li>🚫 No chat spamming</li>
+      <li>🚫 No griefing</li>
       <li>🚫 No advertising other servers</li>
       <li>🚫 No long AFK at spawn</li>
+      <li>🚫 Do not exploit bugs</li>
+      <li>🚫 No insulting religion/ethnicity</li>
+      <li>🚫 No cheating in events</li>
+      <li>🚫 No stealing items from players</li>
       <li>✅ Respect all players & admins</li>
       <li>✅ Use polite language</li>
-      <li>✅ Play fair in events</li>
-      <li>✅ Report bugs immediately to admin/owner</li>
+      <li>✅ Report bugs immediately</li>
+      <li>✅ Follow additional event rules</li>
+      <li>✅ Keep the server positive</li>
     </ul>
   </section>
 
-  <!-- SECTION FITUR -->
+  <!-- FITUR -->
   <section id="fitur">
-    <h3>⚡ Fitur Unggulan</h3>
-    <ul>
+    <h3 class="lang id">⚡ Fitur Unggulan</h3>
+    <h3 class="lang en" style="display:none;">⚡ Main Features</h3>
+    <ul class="lang id">
       <li>🏠 Lobby interaktif</li>
       <li>💰 Sistem economy & shop</li>
-      <li>🎲 Gacha senjata legendaris</li>
-      <li>🛡️ Claim land / protection</li>
       <li>⚔️ PvP arena</li>
-      <li>🪜 Parkour challenge</li>
-      <li>🏰 Dungeon & quest</li>
       <li>🎉 Event mingguan</li>
+      <li>🛡️ Claim land & proteksi</li>
+      <li>🎲 Gacha senjata legendaris</li>
+      <li>🏰 Dungeon & quest</li>
+      <li>🪜 Parkour challenge</li>
       <li>💎 Item langka & enchant custom</li>
+      <li>📜 Rank & level system</li>
+    </ul>
+    <ul class="lang en" style="display:none;">
+      <li>🏠 Interactive lobby</li>
+      <li>💰 Economy & shop system</li>
+      <li>⚔️ PvP arena</li>
+      <li>🎉 Weekly events</li>
+      <li>🛡️ Land claim & protection</li>
+      <li>🎲 Legendary weapon gacha</li>
+      <li>🏰 Dungeons & quests</li>
+      <li>🪜 Parkour challenge</li>
+      <li>💎 Rare items & custom enchants</li>
       <li>📜 Rank & level system</li>
     </ul>
   </section>
 
-  <!-- SECTION IP -->
-  <section id="ipport">
-    <h3>🌍 IP & Port</h3>
-    <p><b>IP:</b> play.armufasmp.my.id<br><b>Port:</b> 19132</p>
-    <a class="btn" onclick="copyText('play.armufasmp.my.id')">📋 Salin IP</a>
-    <a class="btn" onclick="copyText('19132')">📋 Salin Port</a>
-  </section>
-
-  <!-- SECTION OWNER -->
-  <section id="owner">
-    <h3>👑 Owner & Admin</h3>
-    <p>
-      🌟 <b>OWNER:</b> Arya (ARMUFA)<br><br>
-      👑 <b>KETUA ADMIN:</b> Gery (Sirr Arthur)<br><br>
-      🛡️ <b>ADMIN LAINNYA:</b><br>
-      🔹 Ezza (Riski)<br>
-      🔹 Nagata (Zecroomcraft)<br>
-      🔹 Fajri (jrfaii)<br>
-      🔹 Keiya (KeiyaSanch)
-    </p>
-  </section>
-
-  <!-- SECTION GRUP -->
+  <!-- GRUP -->
   <section id="grup">
-    <h3>💬 Grup Server</h3>
-    <p>Gabung grup WhatsApp server:<br>
-    <a class="btn" href="https://linkbio.co/armufasmp" target="_blank">➡️ Join Grup</a></p>
+    <h3 class="lang id">💬 Grup Server</h3>
+    <h3 class="lang en" style="display:none;">💬 Server Group</h3>
+    <p class="lang id">
+      Grup WhatsApp ARMUFA SMP adalah pusat komunikasi utama bagi seluruh player. Di sini kamu bisa berbagi pengalaman, bertanya, diskusi strategi, hingga mendapatkan update server dan event terbaru. Admin rutin mengumumkan giveaway, kompetisi, dan berita penting. Dengan bergabung, kamu tidak akan ketinggalan informasi penting atau pengumuman mendadak. Grup ini juga jadi wadah kekeluargaan di mana player saling mengenal, membangun relasi, dan tumbuh bersama sebagai komunitas.
+    </p>
+    <p class="lang en" style="display:none;">
+      The ARMUFA SMP WhatsApp group is the main communication hub for all players. Here you can share experiences, ask questions, discuss strategies, and get the latest server updates and events. Admins regularly announce giveaways, competitions, and important news. By joining, you won’t miss important info or sudden announcements. This group is also a family-like space where players connect, build relationships, and grow together as a community.
+    </p>
+    <a class="btn" href="https://linkbio.co/armufasmp" target="_blank">➡️ Join Grup</a>
   </section>
 
-  <!-- SECTION TOP UP -->
+  <!-- TOP UP -->
   <section id="topup">
-    <h3>💰 Top Up</h3>
+    <h3 class="lang id">💰 Top Up</h3>
+    <h3 class="lang en" style="display:none;">💰 Top Up</h3>
+    <p class="lang id">
+      Dengan melakukan top up, kamu bisa mendapatkan coin dan rank spesial. Coin dapat dipakai untuk membeli item, ikut event, atau upgrade tertentu. Rank memberikan keuntungan eksklusif seperti akses fitur khusus, status sosial lebih tinggi, dan kesempatan lebih besar dalam event. Semua transaksi dikelola langsung oleh owner sehingga aman dan terpercaya. Top up bukan hanya memberi keuntungan pribadi, tetapi juga membantu server berkembang dan menghadirkan konten baru untuk semua player.
+    </p>
+    <p class="lang en" style="display:none;">
+      By topping up, you can obtain coins and special ranks. Coins can be used to buy items, join events, or make upgrades. Ranks provide exclusive benefits such as access to special features, higher social status, and greater chances in events. All transactions are directly managed by the owner, ensuring safety and trust. Top-up not only gives personal benefits but also helps the server grow and bring new content for all players.
+    </p>
     <p>
       🪙 <b>COIN PRICE</b><br>
       1000 = 5K<br>2000 = 10K<br>4000 = 20K<br>8000 = 40K<br>10000 = 50K<br>20000 = 100K<br><br>
       <b>RANK UP</b><br>
       VIP = 5K / bulan<br>MVP = 20K / bulan<br>Rich = 50K / bulan<br>Super Rich = 100K / bulan<br>Supreme = 150K / bulan<br><br>
-      Hubungi <b>[OWNER] ARMUFA SMP</b>:<br>
       <a class="btn" href="https://wa.me/6283837297362" target="_blank">💰 Top Up Sekarang</a>
     </p>
   </section>
@@ -289,7 +183,6 @@
   <!-- LANGUAGE BUTTON -->
   <button id="langBtn">EN</button>
 
-  <!-- SCRIPT -->
   <script>
     // Smooth scroll
     document.querySelectorAll('nav a').forEach(anchor => {
@@ -298,7 +191,6 @@
         document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
       });
     });
-
     // Scroll spy
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
@@ -318,13 +210,6 @@
         }
       });
     });
-
-    // Copy function
-    function copyText(text) {
-      navigator.clipboard.writeText(text);
-      alert("Disalin: " + text);
-    }
-
     // Language toggle
     const langBtn = document.getElementById("langBtn");
     langBtn.addEventListener("click", () => {
