@@ -1,459 +1,641 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ARMUFA SMP Season 1</title>
-  <style>
-    body { margin: 0; font-family: "Segoe UI", sans-serif; background: #111; color: #fff; }
-    h1, h2 { text-align: center; color: red; margin: 10px 0; }
-    h1 {
-  margin: 10px auto;
-  text-align: center;
-}
-    h2 { font-size: 20px; }
-    p { line-height: 1.5; font-size: 15px; }
-    nav { background: #000; border-bottom: 2px solid red; position: sticky; top: 0; z-index: 1000; padding: 5px 0; }
-    .menu-row { display: flex; justify-content: center; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
-    nav a { color: #fff; text-decoration: none; font-size: 14px; padding: 6px 10px; border-radius: 4px; transition: 0.3s; }
-    nav a.active { background: red; }
-    section { padding: 20px; border-bottom: 2px solid red; }
-    section h3 { color: gold; margin-bottom: 8px; font-size: 18px; }
-    ul { margin: 0; padding-left: 20px; }
-    ul li { margin-bottom: 6px; font-size: 15px; }
-    .btn { display: inline-block; margin-top: 10px; padding: 10px 12px; background: red; color: #fff; border-radius: 6px; text-decoration: none; font-size: 14px; font-weight: bold; transition: 0.3s; }
-    .btn:hover { background: darkred; }
-    #langBtn { position: fixed; bottom: 15px; right: 15px; background: red; border: none; color: #fff; padding: 10px; border-radius: 50%; font-weight: bold; cursor: pointer; z-index: 2000; }
-    /* INTRO */
-    #intro { position: fixed; top:0; left:0; width:100%; height:100%; background:#000; display:flex; flex-direction:column; justify-content:center; align-items:center; z-index:9999; font-weight:bold; color:red; font-size:26px; text-align:center; text-shadow:0 0 10px red,0 0 20px crimson; animation:fadeOut 1s ease forwards; animation-delay:3s; }
-    .intro-line { opacity:0; transform:scale(0.8); animation:popIn 0.8s ease forwards; }
-    .intro-line:nth-child(1){animation-delay:0.2s;}
-    .intro-line:nth-child(2){animation-delay:1s;}
-    @keyframes popIn { to { opacity:1; transform:scale(1);} }
-    @keyframes fadeOut { to { opacity:0; visibility:hidden;} }
-  
-h2, p {
-  border: 2px solid red;
-  border-radius: 8px;
-  padding: 8px;
-  display: inline-block;
-  margin: 5px auto;
-}
-
-h1 {
-  margin: 10px auto;
-  text-align: center;
-}
-
-h1 {
-  margin: 10px auto;
-}
-  border: 2px solid red;
-  border-radius: 8px;
-  padding: 8px;
-  display: inline-block;
-  margin: 5px auto;
-}
-
-nav a {
-  border: 2px solid red;
-  border-radius: 6px;
-  padding: 6px 12px;
-  margin: 3px;
-  display:inline-block;
-}
-
-section {
-  border: 2px solid red;
-  border-radius: 10px;
-  margin: 15px;
-  padding: 20px;
-  background: rgba(0,0,0,0.5);
-}
-
-
-.header-title {
-  color: red;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.header-box {
-  display: inline-block;
-  padding: 8px 16px;
-  background: red;
-  color: #fff;
-  font-weight: bold;
-  border-radius: 6px;
-  margin: 8px auto;
-}
-
-.header-subtitle {
-  display: inline-block;
-  padding: 8px 16px;
-  background: red;
-  color: #fff;
-  border-radius: 6px;
-  margin: 8px auto;
-}
-
-
-.header-title {
-  color: red;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.header-box, .header-subtitle {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 2px solid red;
-  border-radius: 6px;
-  margin: 8px auto;
-  color: #fff;
-  background: transparent;
-}
-
-nav a {
-  border: 2px solid red !important;
-  border-radius: 6px;
-  padding: 6px 12px;
-  margin: 3px;
-  display: inline-block;
-}
-
-
-/* Ensure nav boxes look like screenshot */
-nav { background: transparent; border-bottom: 2px solid red; }
-.menu-row { gap: 12px; }
-nav a { background: transparent; color: #fff; }
-
-
-nav {
-  background: black;
-  padding: 10px 0;
-  border-bottom: 2px solid red;
-  text-align: center;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-nav.hidden {
-  opacity: 0;
-  transform: translateY(-100%);
-  pointer-events: none;
-}
-
-nav a {
-  border: 2px solid red !important;
-  border-radius: 6px;
-  padding: 6px 12px;
-  margin: 3px;
-  display: inline-block;
-  color: #fff;
-  background: transparent;
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zass Desuta || Marketplace</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Temukan berbagai produk digital dengan harga pelajar.">
+    <meta name="keywords" content="zass desuta, marketplace, jualan murah, gratis ongkir">
+    <meta property="og:title" content="Zass Desuta || Marketplace">
+    <meta property="og:description" content="Temukan berbagai produk digital dengan harga pelajar.">
+    <meta property="og:image" content="https://preview-market.vercel.app/img/favicon.png">
+    <meta property="og:url" content="https://preview-market.vercel.app">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+    <!-- Header & Banner -->
+    <header>
+        <div class="container">
+            <div class="banner">
+                <img id="bannerImage" alt="Store Banner">
+<h2 id="storeTitle"></h2>
+                    <p id="greeting-text">Selamat berbelanja!</p>
+                </div>
+            </div>
 
-  <!-- INTRO -->
-  <div id="intro">
-    <div class="intro-line lang id">SELAMAT DATANG</div>
-    <div class="intro-line lang en" style="display:none;">WELCOME</div>
-    <div class="intro-line lang id">DI SERVER ARMUFA SMP</div>
-    <div class="intro-line lang en" style="display:none;">TO ARMUFA SMP SERVER</div>
-  </div>
+            <!-- Profile Section -->
+            <div class="profile">
+                <div class="profile-img" id="profileImage">
+                    <img id="profilePic" alt="Profile">
+                    <div class="verified-badge" id="verifiedBadge">
+                        <i class="fas fa-check"></i>
+                    </div>
+                </div>
+                <div class="profile-info">
+                    <h1 id="profileName"></h1>
+                    <p>⭐ 4.9 (1,234 Reviews) | Free Fee Admin</p>
+                </div>
+            </div>
 
-  <!-- Judul -->
-  <h1 class="lang id" style="display:none;">ARMUFA SMP</h1>
-  <h1 class="lang en" style="display:block;">ARMUFA SMP</h1>
-  <h2 class="lang id" style="display:none;">SEASON 1</h2>
-  <h2 class="lang en" style="display:block;">SEASON 1</h2>
-  <p class="lang id" style="display:none;" style="text-align:center;font-size:14px;">Server Minecraft dengan konsep Economy & RPG</p>
-  <p class="lang en" style="text-align:center;font-size:14px;display:none;">Minecraft Server with Economy & RPG concept</p>
+            <!-- Stats Section -->
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-value">12.5K</div>
+                    <div class="stat-label">Total Terjual</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">8.2K</div>
+                    <div class="stat-label">Pelanggan</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Kepuasan</div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <!-- MENU -->
-  
-  <nav>
-    <div class="menu-row">
-      <a href="#deskripsi" class="lang id" style="display:none;">📜 Deskripsi</a>
-      <a href="#deskripsi" class="lang en" style="display:block;">📜 Description</a>
-      <a href="#aturan" class="lang id" style="display:none;">📖 Aturan</a>
-      <a href="#aturan" class="lang en" style="display:block;">📖 Rules</a>
-      <a href="#fitur" class="lang id" style="display:none;">⚡ Fitur</a>
-      <a href="#fitur" class="lang en" style="display:block;">⚡ Features</a>
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Products Section -->
+        <div class="products-container" id="productsContainer">
+            <!-- Products will be loaded by JavaScript -->
+        </div>
+
+        <!-- FAQ Section - Moved Up -->
+        <div class="faq-section">
+            <h2 class="section-title">Pertanyaan Umum</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Bagaimana cara melakukan pemesanan?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pilih produk yang ingin dibeli, lalu klik pada produk untuk melihat detail dan varian. Setelah memilih varian, klik tombol "Tambah ke Keranjang".</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Berapa lama waktu pengiriman?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Pengiriman dalam kota memakan waktu 1-2 hari, sedangkan luar kota 2-5 hari kerja tergantung daerah tujuan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Apakah produk dijamin original?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Ya, semua produk yang kami jual 100% original dan bergaransi resmi. Kami memberikan garansi uang kembali jika produk terbukti tidak original.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Metode pembayaran apa saja yang diterima?
+                        <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Kami menerima transfer bank (BCA, Mandiri, BNI, BRI), e-wallet (Gopay, OVO, Dana, ShopeePay), serta QRIS.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Testimonials Section - Redesigned -->
+        <div class="testimonials-container">
+            <h2 class="section-title">Testimonial Pelanggan</h2>
+            <div class="testimonials">
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Ahmad R.">
+                            </div>
+                            <div class="testimonial-user">
+                                <div class="testimonial-user-name">Ahmad R.</div>
+                                <div class="testimonial-user-location">Bandung</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Pelayanan sangat cepat dan ramah. Produk original dan harga bersaing. Recommended banget!"</p>
+                            <div class="testimonial-date">12 Juni 2023</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Sinta W.">
+                            </div>
+                            <div class="testimonial-user">
+                                <div class="testimonial-user-name">Sinta W.</div>
+                                <div class="testimonial-user-location">Jakarta</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Barang sampai dengan cepat dan packing aman. Seller responsif dan helpful. Thanks Zass!"</p>
+                            <div class="testimonial-date">5 Juli 2023</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80" alt="Rizky M.">
+                            </div>
+                            <div class="testimonial-user">
+                                <div class="testimonial-user-name">Rizky M.</div>
+                                <div class="testimonial-user-location">Surabaya</div>
+                            </div>
+                            <div class="testimonial-rating">
+                                ⭐⭐⭐⭐⭐
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p class="testimonial-text">"Sudah berkali-kali belanja di sini dan selalu puas. Produk berkualitas dan garansi terpercaya."</p>
+                            <div class="testimonial-date">28 Mei 2023</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <div class="testimonial-control prev" id="testimonialPrev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-control next" id="testimonialNext">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="testimonial-dots">
+                    <div class="dot active" data-slide="0"></div>
+                    <div class="dot" data-slide="1"></div>
+                    <div class="dot" data-slide="2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Advantages Section -->
+        <div class="advantages">
+            <h2 class="section-title">Mengapa Memilih Kami?</h2>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <h3 class="advantage-title">Pengiriman Cepat</h3>
+                    <p class="advantage-desc">Pesanan diproses maksimal 1x24 jam dan dikirim dengan kurir terpercaya</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="advantage-title">Garansi Resmi</h3>
+                    <p class="advantage-desc">Semua produk bergaransi resmi dengan dukungan aftersales terbaik</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3 class="advantage-title">Dukungan 24/7</h3>
+                    <p class="advantage-desc">Customer service siap membantu Anda kapan saja selama 24 jam</p>
+                </div>
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="advantage-title">Terpercaya</h3>
+                    <p class="advantage-desc">Lebih dari 8.200 pelanggan telah mempercayakan kebutuhan mereka pada kami</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Tentang Kami</h3>
+                    <p id="aboutText"></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> <span id="alamat"></span></p>
+                    <p><i class="fas fa-phone"></i> <span id="wa"></span></p>
+                    <p><i class="fas fa-envelope"></i> <span id="email"></span></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Link Cepat</h3>
+                    <a href="index.html">Beranda</a>
+                    <a href="#">Cari</a>
+                    <a href="keranjang.html">Keranjang</a>
+                    <a href="profil.html">Profil</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Ikuti Kami</h3>
+                    <div class="social-icons">
+                        <a id="ytLink" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a id="tiktokLink" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a id="waLink" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        <a id="telegramLink" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p id="copyright"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <div class="product-detail-header">
+                <div class="product-detail-icon" id="modalIcon"></div>
+                <div class="product-detail-title">
+                    <h3 class="product-detail-name" id="modalName"></h3>
+                    <div class="product-detail-price" id="modalPrice"></div>
+                </div>
+            </div>
+            <div class="product-detail-description" id="modalDescription"></div>
+            <div class="variant-selection" id="variantSelection">
+                <!-- Variants will be loaded by JavaScript -->
+            </div>
+            <button class="add-to-cart-btn" id="addToCartBtn">Tambah ke Keranjang</button>
+        </div>
     </div>
-    <div class="menu-row">
-      <a href="#ipport" class="lang id" style="display:none;">🌍 IP & Port</a>
-      <a href="#ipport" class="lang en" style="display:block;">🌍 IP & Port</a>
-      <a href="#owner" class="lang id" style="display:none;">👑 Owner/Admin</a>
-      <a href="#owner" class="lang en" style="display:block;">👑 Owner/Admin</a>
-      <a href="#grup" class="lang id" style="display:none;">💬 Grup</a>
-      <a href="#grup" class="lang en" style="display:block;">💬 Group</a>
-      <a href="#topup" class="lang id" style="display:none;">💰 Top Up</a>
-      <a href="#topup" class="lang en" style="display:block;">💰 Top Up</a>
+
+    <!-- Verification Modal -->
+    <div class="verification-modal" id="verificationModal">
+        <div class="verification-content">
+            <div class="verification-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 class="verification-title">Terverifikasi</h2>
+            <p class="verification-desc">Zass Desuta adalah toko terverifikasi dengan reputasi yang sangat baik. Semua produk dijamin original dan bergaransi resmi.</p>
+            <button class="close-verification" id="closeVerification">Mengerti</button>
+        </div>
     </div>
-  </nav>
 
-
-  <!-- DESKRIPSI -->
-  <section id="deskripsi">
-    <h3 class="lang id" style="display:none;">📜 Deskripsi</h3>
-    <h3 class="lang en" style="display:block;">📜 Description</h3>
-    <p class="lang id" style="display:none;">Selamat datang di <b>ARMUFA SMP INDONESIA [SEASON 1]</b>. Server ini dirancang untuk kamu yang suka tantangan dengan gaya <b>Economy & RPG</b>: mining, farming, membangun rumah, dungeon, parkour, PvP, hingga event gacha dengan hadiah senjata legendaris.</p>
-    <p class="lang en" style="display:block;">Welcome to <b>ARMUFA SMP INDONESIA [SEASON 1]</b>. This server is made for players who love challenges with <b>Economy & RPG</b> style: mining, farming, building houses, dungeons, parkour, PvP, and gacha events with legendary weapon prizes.</p>
-  </section>
-
-  <!-- ATURAN -->
-  <section id="aturan">
-    <h3 class="lang id" style="display:none;">📖 Aturan Server</h3>
-    <h3 class="lang en" style="display:block;">📖 Server Rules</h3>
-    <ul class="lang id" style="display:none;">
-      <li>🚫 Tidak boleh cheat</li>
-      <li>🚫 Tidak boleh toxic</li>
-      <li>🚫 Jangan spam chat</li>
-      <li>🚫 Jangan griefing</li>
-      <li>🚫 Jangan iklan server lain</li>
-      <li>🚫 Jangan AFK lama di spawn</li>
-      <li>🚫 Tidak boleh menggunakan bug</li>
-      <li>🚫 Jangan menghina agama/suku</li>
-      <li>🚫 Jangan curang di event</li>
-      <li>🚫 Jangan mencuri item player lain</li>
-      <li>✅ Hormati semua player & admin</li>
-      <li>✅ Gunakan bahasa sopan</li>
-      <li>✅ Lapor bug segera</li>
-      <li>✅ Ikuti aturan tambahan event</li>
-      <li>✅ Jaga suasana server tetap positif</li>
-    </ul>
-    <ul class="lang en" style="display:block;">
-      <li>🚫 No cheating</li>
-      <li>🚫 No toxicity</li>
-      <li>🚫 No chat spamming</li>
-      <li>🚫 No griefing</li>
-      <li>🚫 No advertising other servers</li>
-      <li>🚫 No long AFK at spawn</li>
-      <li>🚫 Do not exploit bugs</li>
-      <li>🚫 No insulting religion/ethnicity</li>
-      <li>🚫 No cheating in events</li>
-      <li>🚫 No stealing items from players</li>
-      <li>✅ Respect all players & admins</li>
-      <li>✅ Use polite language</li>
-      <li>✅ Report bugs immediately</li>
-      <li>✅ Follow additional event rules</li>
-      <li>✅ Keep the server positive</li>
-    </ul>
-  </section>
-
-  <!-- FITUR -->
-  <section id="fitur">
-    <h3 class="lang id" style="display:none;">⚡ Fitur Unggulan</h3>
-    <h3 class="lang en" style="display:block;">⚡ Main Features</h3>
-    <ul class="lang id" style="display:none;">
-      <li>🏠 Lobby interaktif</li>
-      <li>💰 Sistem economy & shop</li>
-      <li>⚔️ PvP arena</li>
-      <li>🎉 Event mingguan</li>
-      <li>🛡️ Claim land & proteksi</li>
-      <li>🎲 Gacha senjata legendaris</li>
-      <li>🏰 Dungeon & quest</li>
-      <li>🪜 Parkour challenge</li>
-      <li>💎 Item langka & enchant custom</li>
-      <li>📜 Rank & level system</li>
-    </ul>
-    <ul class="lang en" style="display:block;">
-      <li>🏠 Interactive lobby</li>
-      <li>💰 Economy & shop system</li>
-      <li>⚔️ PvP arena</li>
-      <li>🎉 Weekly events</li>
-      <li>🛡️ Land claim & protection</li>
-      <li>🎲 Legendary weapon gacha</li>
-      <li>🏰 Dungeons & quests</li>
-      <li>🪜 Parkour challenge</li>
-      <li>💎 Rare items & custom enchants</li>
-      <li>📜 Rank & level system</li>
-    </ul>
-  </section>
-
-
-  
-  <!-- IP & PORT -->
-  <section id="ipport">
-    <h3 class="lang id" style="display:none;">🌍 IP & Port</h3>
-    <h3 class="lang en" style="display:block;">🌍 IP & Port</h3>
-
-    <p class="lang id" style="display:none;">Gunakan informasi berikut untuk masuk ke server Minecraft ARMUFA SMP:</p>
-    <p class="lang en" style="display:block;">Use the following info to join the ARMUFA SMP Minecraft server:</p>
-
-    <p>
-      🌍 <b>IP:</b> <span id="server-ip">play.armufasmp.my.id</span><br>
-      <i class="lang id" style="display:none;">Alamat utama server untuk menghubungkan game kamu.</i>
-      <i class="lang en" style="display:block;">The main server address to connect your game.</i><br>
-      <button class="btn" onclick="copyText('server-ip')">📋 Salin IP</button>
-    </p>
-    <p>
-      🔌 <b>Port:</b> <span id="server-port">19132</span><br>
-      <i class="lang id" style="display:none;">Gunakan port default Minecraft Bedrock (19132).</i>
-      <i class="lang en" style="display:block;">Use the default Minecraft Bedrock port (19132).</i><br>
-      <button class="btn" onclick="copyText('server-port')">📋 Salin Port</button>
-    </p>
-
-    <div style="margin-top:15px;">
-      <a class="btn lang id" href="minecraft://?addExternalServer=ARMUFA%20SMP|play.armufasmp.my.id:19132">🎮 Masuk Bedrock</a>
-      <a class="btn lang en" style="display:none;" href="minecraft://?addExternalServer=ARMUFA%20SMP|play.armufasmp.my.id:19132">🎮 Join Bedrock</a>
-      <a class="btn lang id" href="minecraft-java://play.armufasmp.my.id:25565">💻 Masuk Java</a>
-      <a class="btn lang en" style="display:none;" href="minecraft-java://play.armufasmp.my.id:25565">💻 Join Java</a>
+    <!-- Theme Toggle -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
     </div>
-  </section>
 
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="index.html" class="nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Beranda</span>
+        </a>
+        <a href="search.html" class="nav-item">
+            <i class="fas fa-search"></i>
+            <span>Cari</span>
+        </a>
+        <a href="keranjang.html" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span class="cart-badge" id="cartBadge">0</span>
+        </a>
+        <a href="profil.html" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Profil</span>
+        </a>
+    </div>
+    
+    <script src="js/config.js"></script>
+    <script>
+        // Import config
+        document.getElementById("bannerImage").src = CONFIG.banner;
+        document.getElementById("storeTitle").innerText = CONFIG.nama + " || Marketplace";
+        document.getElementById("profilePic").src = CONFIG.profil;
+        document.getElementById("profileName").innerHTML = CONFIG.nama + ' <i class="fas fa-check-circle" style="color: var(--primary);"></i>';
+        document.getElementById("aboutText").innerText = CONFIG.tentang;
+        document.getElementById("alamat").innerText = CONFIG.alamat;
+        document.getElementById("wa").innerText = CONFIG.sosial_media.whatsapp;
+        document.getElementById("email").innerText = CONFIG.sosial_media.email;
+        document.getElementById("ytLink").href = "https://youtube.com/" + CONFIG.sosial_media.youtube;
+        document.getElementById("tiktokLink").href = "https://tiktok.com/@" + CONFIG.sosial_media.tiktok;
+        document.getElementById("waLink").href = "https://wa.me/" + CONFIG.sosial_media.whatsapp;
+        document.getElementById("telegramLink").href = "https://t.me/" + CONFIG.sosial_media.telegram;
+        document.getElementById("copyright").innerText =
+  `© ${new Date().getFullYear()} ${CONFIG.nama}. All Rights Reserved.`;
+        
+        // DOM Elements
+        const productsContainer = document.getElementById('productsContainer');
+        const productModal = document.getElementById('productModal');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalName = document.getElementById('modalName');
+        const modalPrice = document.getElementById('modalPrice');
+        const modalDescription = document.getElementById('modalDescription');
+        const variantSelection = document.getElementById('variantSelection');
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const closeModal = document.getElementById('closeModal');
+        const themeToggle = document.getElementById('themeToggle');
+        const cartBadge = document.getElementById('cartBadge');
+        const verifiedBadge = document.getElementById('verifiedBadge');
+        const verificationModal = document.getElementById('verificationModal');
+        const closeVerification = document.getElementById('closeVerification');
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        const testimonialPrev = document.getElementById('testimonialPrev');
+        const testimonialNext = document.getElementById('testimonialNext');
+        const dots = document.querySelectorAll('.dot');
+        const faqItems = document.querySelectorAll('.faq-item');
 
+        // State Variables
+        let currentSlide = 0;
+        let selectedProduct = null;
+        let selectedVariant = null;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  
-  <!-- OWNER & ADMIN -->
-  <section id="owner">
-    <h3 class="lang id" style="display:none;">👑 Owner & Admin</h3>
-    <h3 class="lang en" style="display:block;">👑 Owner & Admin</h3>
-
-    <p class="lang id" style="display:none;">OWNER:<br>🌟 [OWNER]: ARYA (ARMUFA)</p>
-    <p class="lang en" style="display:block;">OWNER:<br>🌟 [OWNER]: ARYA (ARMUFA)</p>
-
-    <p class="lang id" style="display:none;">KETUA ADMIN:</p>
-    <ul class="lang id" style="display:none;">
-      <li>🤵 gery (Sirr Arthur)</li>
-    </ul>
-    <p class="lang en" style="display:block;">HEAD ADMIN:</p>
-    <ul class="lang en" style="display:block;">
-      <li>🤵 gery (Sirr Arthur)</li>
-    </ul>
-
-    <p class="lang id" style="display:none;">ADMIN LAINNYA:</p>
-    <ul class="lang id" style="display:none;">
-      <li>🛡️ Azril (RillTo2012)</li>
-      <li>🛡️ Ezza (Riski)</li>
-      <li>🛡️ Nagata (Zecroomcraft)</li>
-      <li>🛡️ fajri (jrfaii)</li>
-      <li>🛡️ Keiya (KeiyaSanch)</li>
-      <li>🛡️ Azel (FoxxN)</li>
-      <li>🛡️ butuh 4 admin</li>
-    </ul>
-
-    <p class="lang en" style="display:block;">OTHER ADMINS:</p>
-    <ul class="lang en" style="display:block;">
-      <li>🛡️ Azril (RillTo2012)</li>
-      <li>🛡️ Ezza (Riski)</li>
-      <li>🛡️ Nagata (Zecroomcraft)</li>
-      <li>🛡️ fajri (jrfaii)</li>
-      <li>🛡️ Keiya (KeiyaSanch)</li>
-      <li>🛡️ Azel (FoxxN)</li>
-      <li>🛡️ need 4 admins</li>
-    </ul>
-  </section>
-
-
-  <!-- GRUP -->
-  <section id="grup">
-    <h3 class="lang id" style="display:none;">💬 Grup Server</h3>
-    <h3 class="lang en" style="display:block;">💬 Server Group</h3>
-    <p class="lang id" style="display:none;">
-      Grup WhatsApp ARMUFA SMP adalah pusat komunikasi utama bagi seluruh player. Di sini kamu bisa berbagi pengalaman, bertanya, diskusi strategi, hingga mendapatkan update server dan event terbaru. Admin rutin mengumumkan giveaway, kompetisi, dan berita penting. Dengan bergabung, kamu tidak akan ketinggalan informasi penting atau pengumuman mendadak. Grup ini juga jadi wadah kekeluargaan di mana player saling mengenal, membangun relasi, dan tumbuh bersama sebagai komunitas.
-    </p>
-    <p class="lang en" style="display:block;">
-      The ARMUFA SMP WhatsApp group is the main communication hub for all players. Here you can share experiences, ask questions, discuss strategies, and get the latest server updates and events. Admins regularly announce giveaways, competitions, and important news. By joining, you won’t miss important info or sudden announcements. This group is also a family-like space where players connect, build relationships, and grow together as a community.
-    </p>
-    <a class="btn" href="https://linkbio.co/armufasmp" target="_blank">➡️ Join Grup</a>
-  </section>
-
-  <!-- TOP UP -->
-  <section id="topup">
-    <h3 class="lang id" style="display:none;">💰 Top Up</h3>
-    <h3 class="lang en" style="display:block;">💰 Top Up</h3>
-    <p class="lang id" style="display:none;">
-      Dengan melakukan top up, kamu bisa mendapatkan coin dan rank spesial. Coin dapat dipakai untuk membeli item, ikut event, atau upgrade tertentu. Rank memberikan keuntungan eksklusif seperti akses fitur khusus, status sosial lebih tinggi, dan kesempatan lebih besar dalam event. Semua transaksi dikelola langsung oleh owner sehingga aman dan terpercaya. Top up bukan hanya memberi keuntungan pribadi, tetapi juga membantu server berkembang dan menghadirkan konten baru untuk semua player.
-    </p>
-    <p class="lang en" style="display:block;">
-      By topping up, you can obtain coins and special ranks. Coins can be used to buy items, join events, or make upgrades. Ranks provide exclusive benefits such as access to special features, higher social status, and greater chances in events. All transactions are directly managed by the owner, ensuring safety and trust. Top-up not only gives personal benefits but also helps the server grow and bring new content for all players.
-    </p>
-    <p>
-      🪙 <b>COIN PRICE</b><br>
-      1000 = 5K<br>2000 = 10K<br>4000 = 20K<br>8000 = 40K<br>10000 = 50K<br>20000 = 100K<br><br>
-      <b>RANK UP</b><br>
-      VIP = 5K / bulan<br>MVP = 20K / bulan<br>Rich = 50K / bulan<br>Super Rich = 100K / bulan<br>Supreme = 150K / bulan<br><br>
-      <a class="btn" href="https://wa.me/6283837297362" target="_blank">💰 Top Up Sekarang</a>
-    </p>
-  </section>
-
-  <!-- LANGUAGE BUTTON -->
-  <button id="langBtn">ID</button>
-
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('nav a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
-      });
-    });
-    // Scroll spy
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 80;
-        const sectionHeight = section.clientHeight;
-        if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-          current = section.getAttribute("id");
+        // Initialize the page
+        function init() {
+            updateCartBadge();
+            renderProducts();
+            setupEventListeners();
+            updateGreeting();
         }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active");
+
+        // Render products by category
+        function renderProducts() {
+            let productsHTML = '';
+            
+            for (const category in productsData) {
+                productsHTML += `
+                    <div class="product-category">
+                        <h2 class="category-title">${category}</h2>
+                        <div class="products-grid">
+                            ${productsData[category].map(product => `
+                                <div class="product-card" data-id="${product.id}">
+                                    <div class="product-icon">
+                                        <i class="${product.icon}"></i>
+                                    </div>
+                                    <h3 class="product-name">${product.name}</h3>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+            }
+            
+            productsContainer.innerHTML = productsHTML;
         }
-      });
-    });
-    // Language toggle
-    const langBtn = document.getElementById("langBtn");
-    langBtn.addEventListener("click", () => {
-      const idTexts = document.querySelectorAll(".lang.id");
-      const enTexts = document.querySelectorAll(".lang.en");
-      if (langBtn.textContent === "EN") {
-        idTexts.forEach(el => el.style.display = "none");
-        enTexts.forEach(el => el.style.display = "block");
-        langBtn.textContent = "ID";
-      } else {
-        idTexts.forEach(el => el.style.display = "block");
-        enTexts.forEach(el => el.style.display = "none");
-        langBtn.textContent = "EN";
-      }
-    });
-  
-    function copyText(elementId) {
-      const text = document.getElementById(elementId).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        alert(text + " berhasil disalin!");
-      });
-    }
-  </script>
 
-<script>
-let lastScrollTop = 0;
-const nav = document.querySelector("nav");
+        // Setup event listeners
+        function setupEventListeners() {
+            // Product card click
+            document.querySelectorAll('.product-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const productId = parseInt(card.getAttribute('data-id'));
+                    openProductModal(productId);
+                });
+            });
 
-window.addEventListener("scroll", function(){
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if(scrollTop > lastScrollTop){
-    nav.classList.add("hidden"); // animasi hilang saat scroll down
-  } else {
-    nav.classList.remove("hidden"); // animasi muncul saat scroll up
-  }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-}, false);
-</script>
+            // Close modal
+            closeModal.addEventListener('click', closeProductModal);
 
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+
+            // Add to cart
+            addToCartBtn.addEventListener('click', addToCart);
+
+            // Verification badge
+            verifiedBadge.addEventListener('click', () => {
+                verificationModal.style.display = 'block';
+            });
+
+            // Close verification modal
+            closeVerification.addEventListener('click', () => {
+                verificationModal.style.display = 'none';
+            });
+
+            // Testimonial controls
+            testimonialPrev.addEventListener('click', () => {
+                navigateTestimonial(-1);
+            });
+
+            testimonialNext.addEventListener('click', () => {
+                navigateTestimonial(1);
+            });
+
+            // Testimonial dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    const slideIndex = parseInt(dot.getAttribute('data-slide'));
+                    goToTestimonial(slideIndex);
+                });
+            });
+
+            // FAQ toggles
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    item.classList.toggle('active');
+                });
+            });
+        }
+
+        // Open product modal
+        function openProductModal(productId) {
+            // Find product by ID
+            for (const category in productsData) {
+                const product = productsData[category].find(p => p.id === productId);
+                if (product) {
+                    selectedProduct = product;
+                    break;
+                }
+            }
+
+            if (!selectedProduct) return;
+
+            // Update modal content
+            modalIcon.innerHTML = `<i class="${selectedProduct.icon}"></i>`;
+            modalName.textContent = selectedProduct.name;
+            modalPrice.textContent = `Rp ${selectedProduct.variants[0].price.toLocaleString('id-ID')}`;
+            modalDescription.textContent = selectedProduct.description;
+
+            // Render variants
+            variantSelection.innerHTML = `
+                <h4 class="variant-title">Pilih Varian:</h4>
+                <div class="variant-options">
+                    ${selectedProduct.variants.map((variant, index) => `
+                        <div class="variant-option ${index === 0 ? 'selected' : ''}" data-index="${index}">
+                            <div class="variant-name">${variant.name}</div>
+                            <div class="variant-price">Rp ${variant.price.toLocaleString('id-ID')}</div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            // Set first variant as selected
+            selectedVariant = 0;
+
+            // Add event listeners to variant options
+            document.querySelectorAll('.variant-option').forEach(option => {
+                option.addEventListener('click', () => {
+                    // Remove selected class from all options
+                    document.querySelectorAll('.variant-option').forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // Add selected class to clicked option
+                    option.classList.add('selected');
+                    
+                    // Update selected variant
+                    selectedVariant = parseInt(option.getAttribute('data-index'));
+                    
+                    // Update price
+                    modalPrice.textContent = `Rp ${selectedProduct.variants[selectedVariant].price.toLocaleString('id-ID')}`;
+                });
+            });
+
+            // Show modal
+            productModal.style.display = 'block';
+        }
+
+        // Close product modal
+        function closeProductModal() {
+            productModal.style.display = 'none';
+            selectedProduct = null;
+            selectedVariant = null;
+        }
+
+        // Add to cart
+        function addToCart() {
+            if (!selectedProduct) return;
+
+            const variant = selectedProduct.variants[selectedVariant];
+            
+            // Check if product already in cart
+            const existingItemIndex = cart.findIndex(item => 
+                item.productId === selectedProduct.id && item.variantName === variant.name
+            );
+
+            if (existingItemIndex >= 0) {
+                // Update quantity
+                cart[existingItemIndex].quantity += 1;
+            } else {
+                // Add new item
+                cart.push({
+                    productId: selectedProduct.id,
+                    productName: selectedProduct.name,
+                    variantName: variant.name,
+                    price: variant.price,
+                    quantity: 1,
+                    icon: selectedProduct.icon
+                });
+            }
+
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart badge
+            updateCartBadge();
+            
+            // Show success message
+            showToast(`${selectedProduct.name} (${variant.name}) ditambahkan ke keranjang`);
+            
+            // Close modal
+            closeProductModal();
+        }
+
+        // Update cart badge
+        function updateCartBadge() {
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartBadge.textContent = totalItems;
+        }
+
+        // Show toast notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <i class="fas fa-check-circle"></i>
+                <span>${message}</span>
+            `;
+            
+            document.body.appendChild(toast);
+            
+            // Remove toast after animation
+            setTimeout(() => {
+                toast.remove();
+            }, 3000);
+        }
+
+        // Toggle theme
+        function toggleTheme() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update icon
+            themeToggle.innerHTML = newTheme === 'dark' ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+
+        // Navigate testimonial
+        function navigateTestimonial(direction) {
+            const totalSlides = document.querySelectorAll('.testimonial-slide').length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            goToTestimonial(currentSlide);
+        }
+
+        // Go to specific testimonial
+        function goToTestimonial(slideIndex) {
+            const slideWidth = testimonialSlider.clientWidth;
+            testimonialSlider.style.transform = `translateX(-${slideIndex * slideWidth}px)`;
+            
+            // Update dots
+            dots.forEach(dot => {
+                const dotIndex = parseInt(dot.getAttribute('data-slide'));
+                dot.classList.toggle('active', dotIndex === slideIndex);
+            });
+            
+            currentSlide = slideIndex;
+        }
+
+        // Update greeting based on time of day
+        function updateGreeting() {
+            const hour = new Date().getHours();
+            let greeting = '';
+            
+            if (hour < 12) greeting = 'Selamat pagi!';
+            else if (hour < 15) greeting = 'Selamat siang!';
+            else if (hour < 19) greeting = 'Selamat sore!';
+            else greeting = 'Selamat malam!';
+            
+            document.getElementById('greeting-text').textContent = greeting + ' Selamat berbelanja!';
+        }
+
+        // Check for saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            themeToggle.innerHTML = savedTheme === 'dark' ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
